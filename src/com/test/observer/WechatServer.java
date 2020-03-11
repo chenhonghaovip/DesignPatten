@@ -12,16 +12,13 @@ import java.util.List;
 public class WechatServer implements Observerable{
     private List<Observer> list ;
     private String message;
-
     public void setMessage(String message) {
         this.message = message;
     }
-
     WechatServer(String message) {
         list = new ArrayList<>();
         this.message = message;
     }
-
     @Override
     public void registerObserver(Observer o) {
         list.add(o);
@@ -34,12 +31,10 @@ public class WechatServer implements Observerable{
         }
 
     }
-
     @Override
     public void notifyObserver() {
         if (!list.isEmpty()){
             list.forEach(each->each.update(message));
         }
-
     }
 }

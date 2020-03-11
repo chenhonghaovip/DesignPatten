@@ -8,9 +8,11 @@ package com.test.observer;
  */
 public class Client {
     public static void main(String[] args) {
-        Observerable observerable = new WechatServer("111");
-        observerable.registerObserver(new FirstUser());
-        observerable.registerObserver(new SecondUser());
-        observerable.notifyObserver();
+        WechatServer wechatServer = new WechatServer("111");
+        wechatServer.registerObserver(new FirstUser());
+        wechatServer.registerObserver(new SecondUser());
+        wechatServer.notifyObserver();
+        wechatServer.setMessage("2222");
+        wechatServer.notifyObserver();
     }
 }
