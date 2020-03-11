@@ -11,14 +11,4 @@ public class ClothesEquip implements Equip{
     public void description() {
         System.out.println("服装类装备");
     }
-
-    @Override
-    public void attack() {
-
-    }
-
-    @Override
-    public void defense() {
-
-    }
 }
